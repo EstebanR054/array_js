@@ -44,7 +44,7 @@ document.write("El array de frutas tiene una longitud de: "+frutass.length+"<br>
 
 //Métodos de arrays
 
-document.write("<h3>METODOS DE ARRAYS</h3>")
+document.write("<h2>METODOS DE ARRAYS</h2>")
 
 //.PUSH
 
@@ -88,3 +88,43 @@ const frutasu = ["plátano", "fresa", "naranja"]
 frutasu.unshift("manzana")
 
 document.write("El array de frutas agregando una al inicio es: "+frutasu+"<br>")
+
+// CONCAT ().
+
+document.write("<h3>CONCATENAR ARRAYS</h3>")
+
+const numbersr = [1, 2, 3]
+const numbersr2 = [4, 5]
+
+const allNumbersr = numbersr.concat(numbersr2)
+
+document.write("El Array de numbersr se concatenan en una misma línea como muestra: "+allNumbersr+"<br>")
+
+// CONCATENAR ARRAY DE OTRO MODO
+
+const numbersrr= [1, 2, 3]
+const numbersrr2 = [4, 5]
+
+//                    1, 2, 3        4, 5                     
+const allNumbersrr = [...numbersrr, ...numbersrr2]
+
+document.write("El Array de numbersrr se concatenan en una misma línea como muestra: "+allNumbersrr+"<br>")
+
+document.write("<h3>EJERCICIO</h3>")
+
+/*En un restaurante se reciben pedidos de comida a domicilio. Vamos a escribir una función procesarPedido que recibe un pedido, que es un array de platos. Lo que debemos hacer es:
+
+El primer elemento lo sacamos del array, ya que es el nombre del cliente.
+Añadimos al principio del array la cadena de texto "bebida", ya que es una promoción que tenemos.
+Después añadimos al final del array el nombre del usuario que sacamos antes.
+Recuerda que debes devolver el array modificado:*/
+
+function procesarPedido(pedidos) {
+    const cliente = pedidos.shift();
+    pedidos.unshift("Bebida");
+    pedidos.push(cliente);
+    return pedidos
+  }
+
+  const p = ["Pedro", "Café", "Huevos", "Pan"]
+  document.write("El pedido sería: "+procesarPedido(p)+"<br>")
